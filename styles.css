@@ -18,6 +18,11 @@ body {
   color: #FEF2BF;
 }
 
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 
 
 .container {
@@ -38,6 +43,11 @@ body {
   border: 10px solid black;
   border-radius: 20%;
   transition: transform 0.1s;
+}
+
+.btn.disabled {
+  pointer-events: none;
+  opacity: 0.5; 
 }
 
 .buttonStart {
