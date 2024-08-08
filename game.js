@@ -10,13 +10,16 @@ var level = 0;
 
 $(document).ready(function(){
     showDialog();
+    $(".btn").addClass("disabled");
 })
 
 
 $("#start").on("click", function (){
     if(!started){
         $("#start").hide();
-        $("p").hide();
+
+        $(".btn").removeClass("disabled");
+
         $("#level-title").text("Level " + level);
         nextSequence();
         started = true;
@@ -26,7 +29,11 @@ $("#start").on("click", function (){
 $("#refresh-button").on("click", function (){
     if(!started){
         $("#refresh-button").css("display", "none");
+
+        $(".btn").removeClass("disabled");
+
         $("#level-title").text("Level " + level);
+
         nextSequence();
         started = true;
     }
@@ -63,6 +70,8 @@ function checkAnswer(currentLevel) {
       $("body").addClass("game-over");
       $("#level-title").text("Game Over, click Refresh to Restart");
       $("#refresh-button").css("display", "inline-block");
+
+      $(".btn").addClass("disabled");
 
       setTimeout(function () {
         $("body").removeClass("game-over");
