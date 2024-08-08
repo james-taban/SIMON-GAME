@@ -8,6 +8,10 @@ var started = false;
 
 var level = 0;
 
+$(document).ready(function(){
+    showDialog();
+})
+
 
 $("#start").on("click", function (){
     if(!started){
@@ -112,3 +116,10 @@ function startOver(){
     started = false;
 }
 
+function showDialog() {
+    document.getElementById("dialog-box").style.display = "block";
+}
+
+function closeDialog() {
+    document.getElementById("dialog-box").style.display = "none";
+}
